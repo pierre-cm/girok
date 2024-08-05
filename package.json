@@ -1,0 +1,41 @@
+{
+  "name": "girok",
+  "version": "0.1.0",
+  "description": "girok is a lightweight and highly customizable JavaScript logger",
+  "author": "Pierre Caillaud M (https://github.com/pierre-cm)",
+  "module": "index.ts",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pierre-cm/girok"
+  },
+  "bugs": "https://github.com/pierre-cm/girok/issues",
+  "keywords": [
+    "logger",
+    "log",
+    "fast",
+    "lightweight",
+    "customizable",
+    "bun"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "release-it": "^17.6.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.11"
+  },
+  "release-it": {
+    "git": {
+      "pushRepo": "git@github.com:pierre-cm/girok.git"
+    },
+    "github": {
+      "requireBranch": "main",
+      "release": "true"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+name: Install & Test
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    name: Install & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Install
+        run: bun install
+      - name: Test
+        run: bun test
