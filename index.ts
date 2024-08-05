@@ -15,6 +15,7 @@ export type LoggerOptions = {
   outputs: (string | Transporter)[]
   bufferSize: number
   flushInterval?: number
+  overrideConsole: boolean
 }
 export type LogMeta = {
   level: Level
@@ -69,6 +70,7 @@ export const logger = (options?: Partial<LoggerOptions>): Logger => {
     outputs: options?.outputs || ["stdout"],
     bufferSize: options?.bufferSize || 1,
     flushInterval: options?.flushInterval,
+    overrideConsole: options?.overrideConsole || false,
   }
 
   const makeLogger = (ctx: Record<string, any> = {}) => {
@@ -113,7 +115,13 @@ export const logger = (options?: Partial<LoggerOptions>): Logger => {
     return {
       ...(Object.fromEntries(
         LEVELS.map((l, i) => {
-          return [l, makeLog(i, { ...opt, context: ctx }, buffer)]
+          const log = makeLog(i, { ...opt, context: ctx }, buffer)
+          if (opt.overrideConsole) {
+            //@ts-ignore
+            if (l in console) console[l] = log
+            if (l === "info") console.log = log
+          }
+          return [l, log]
         })
       ) as Record<Level, (...args: any[]) => void>),
       context: (c: Record<string, any> = {}) => makeLogger({ ...ctx, ...c }),
