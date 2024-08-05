@@ -1,8 +1,8 @@
 # girok
 
-[![npm version](https://img.shields.io/npm/v/girok.svg)](https://www.npmjs.com/package/girok)
-
+[![Build & Test](https://github.com/pierre-cm/girok/actions/workflows/build_test.yml/badge.svg?branch=main)](https://github.com/pierre-cm/girok/actions/workflows/build_test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pierre-cm/girok/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/girok.svg)](https://www.npmjs.com/package/girok)
 
 girok is a lightweight and highly customizable Javascript logger.
 
