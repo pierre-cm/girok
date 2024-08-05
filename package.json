@@ -1,6 +1,6 @@
 {
   "name": "girok",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "girok is a lightweight and highly customizable JavaScript logger",
   "author": "Pierre Caillaud M (https://github.com/pierre-cm)",
   "module": "index.ts",
