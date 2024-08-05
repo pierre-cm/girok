@@ -19,6 +19,9 @@
     "bun"
   ],
   "license": "MIT",
+  "scripts": {
+    "release": "release-it"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "release-it": "^17.6.0"
