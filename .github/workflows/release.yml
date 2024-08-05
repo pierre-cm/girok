@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       scope:
-        description: 'Version bump scope (patch, minor, major)'
+        description: "Version bump scope (patch, minor, major)"
         required: true
 
 jobs:
@@ -22,10 +22,10 @@ jobs:
         with:
           bun-version: latest
           registry-url: https://registry.npmjs.org
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      # - name: Setup SSH
+      #   uses: webfactory/ssh-agent@v0.8.0
+      #   with:
+      #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Setup Git
         run: |
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
