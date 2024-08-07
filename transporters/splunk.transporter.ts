@@ -30,7 +30,6 @@ export const splunk = (config: {
     parser: (d) =>
       `[${d
         .map((b) => {
-          console.log("->", b)
           return JSON.stringify({
             ...(config?.metadata || {}),
             event: JSON.parse(b),

@@ -11,6 +11,7 @@ const DEFAULT_FILTER = ["level", "caller", "ts", "context", "args"]
  * @param filter keys to be included in the output
  * @param opt options
  * @example
+ * const log = formatJson(['level', 'ts'])
  * log.info("key1", "val1", "key2", 42, "key3", {"foo":"bar"})
  * // {"level":"info","ts":123456789,"key1":"val1","key2":42,"key3":{"foo":"bar"}}
  */
